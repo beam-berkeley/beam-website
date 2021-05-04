@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+.projectImage {
+	width: 15vw;
+	margin-right: 2vw;
+	margin-top: 0vh;
+}
+
+.thumbnail {
+	width: 15vw;
+}
+
+div#project-container {
+	margin: auto;
+	justify-content: flex-start;
+	width: 100%;
+	flex-wrap: wrap;
+	display: flex;
+	//padding-right: 5%;
+	//padding-left: 5%;
+}
+
+.thumbnail {
+  margin-top: 5%;
+}
+
+.left {
+  margin-left: 7.5%;
+}
+
+.mid {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.right {
+  margin-right: 7.5%;
+}
+
+#semester-proj {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: "white";
+  width: 60vw;
+  position: relative;
+  margin-left: -30vw;
+  left: 50%;
+}
+// filtering css
+
+.filterable {
+
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+  animation: fadeEffect 1s; 
+}
+
+/* Style the buttons */
+.btn {
+  background-color: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.17em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  //padding: 14px 16px;
+  transition: 0.3s;
+  margin-left: 3%;
+  font-family: "Montserrat", sans-serif;
+
+  
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  border-bottom: 1.5px solid #ddd;
+  padding-bottom: 3px;
+ 
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  border-bottom: 1.5px solid black;
+  padding-bottom: 3px;
+
+}
+
+#categoryButtonContainer {
+  
+  padding-top: 2%;
+  text-align: center;
+
+}
+
+

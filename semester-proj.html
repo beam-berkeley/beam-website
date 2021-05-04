@@ -1,0 +1,121 @@
+---
+title: Semester Long Projects
+heading:
+description: Over the course of the past year, BEAM has been forced to move to a fully virtual mode of mentoring.  As a side effect of this change, our sites began work on semester long projects which provide unique and alternative ways of furthering our mission of science education and mentorship.  These projects cover a wide variety of topics (education, culture, learning styles, etc.) through a wide variety of media (lesson plans, music videos, research presentations, websites/applications).  Presented here is a comprehensive list of all of these projects.
+---
+
+<title> Semester Projects </title>
+
+<div id="categoryButtonContainer">
+  <button id = "start" class="btn" onclick="filterSelection('all')">All</button>
+  <button class = "btn" onclick="filterSelection('presentation')">Presentations</button>
+  <button class="btn" onclick="filterSelection('music_stories')">Music, Stories, & More</button>
+  <button class="btn" onclick="filterSelection('website_alg')">Websites and Algorithms</button>
+</div>
+
+<div id="semester-proj">
+  <div class="project-container" id="project-container">
+
+    <script language="JavaScript">
+        var projects = 
+            [["challenge_online", "Challenges of Online Learning", "https://drive.google.com/file/d/1TBAE7dVZ8VGK6aqTDu8_HSZJcoparifW/view", "presentation"],
+            ["type_mentorship", "Types of Mentorship", "https://docs.google.com/presentation/d/1SfWIN0qougstPQrEG23xylc-bCPj1_gLcheIDQ2BCXQ/edit?usp=sharing", "presentation"],
+            ["stem_misinf", "STEM Misinformation", "https://drive.google.com/file/d/1BwS8typXn_dh7uY3af9zhZ6U7S99pfup/view", "presentation"],
+            ["data_analysis", "Data Analysis of BEAM’s Sites", "https://drive.google.com/file/d/1yk508xid3ieC-qhhUJMH00Pqh24ug-TH/view", "presentation"],
+            ["education_culture", "Education And Culture", "https://drive.google.com/file/d/1EFnIY2g2gGhph-fETuiljSrGh7O0AZ5B/view", "presentation"],
+            ["adverse_child", "Adverse Child Experiences", "https://drive.google.com/file/d/1R01UAqRu8DhCykvv3T9Ul5pMCFJ7CbFC/view", "presentation"],
+            ["school_district_equity", "School District Equity", "https://drive.google.com/file/d/1sC4WYvGQas03XrJ3ACpzr2ZmBjNlAh8-/view", "presentation"],
+            ["education_intl", "Education for International Students", "https://drive.google.com/file/d/1L5Ph-H23PCMaWUL7yc6iRQKiVTS0xCeh/view", "presentation"],
+            ["education_inequality", "Educational Inequalities", "https://drive.google.com/file/d/18ENo_fNJmgktRYXD4f7yGnzTMVDHK5DW/view", "presentation"],
+            ["gender_mentoring", "Gender Specific Mentoring", "https://drive.google.com/file/d/1znA71julUtZnNmXNe0EkwqyCpV-Ohgrx/view", "presentation"],
+
+            ["iBEAM_mentorship", "iBEAM Mentorship Program", "https://drive.google.com/file/d/1VJaAAJZBk6XAFrr1R0gflt_UgkxYPiAU/view", "music_stories"],
+            ["education_ineq_song", "Education Inequities Song Project", "https://drive.google.com/file/d/1Cy8SetY_C1Mj1JmK_8L0Kj6YeH0sgSwo/view", "music_stories"],
+            ["learning_styles", "Learning Styles Song", "https://drive.google.com/file/d/1oCbP_g-8T_8QzLTSKHY6NKDCQjXhY0iM/view", "music_stories"],
+            ["womxn_stem", "Womxn in STEM Picturebook", "https://docs.google.com/presentation/d/1quc9i4_OEQkUURDHTzmNSOatS4rWx-jiNWRkBUmmvFg/edit", "music_stories"],
+
+            ["beam_mentor_hub", "BEAM Mentor Hub", "https://drive.google.com/file/d/1ty5CeKSh_E7EAnuDiya5JyOb_QLar6M4/view", "website_alg"],
+            ["beam_rocket_sim", "BEAM Rocket project Simulation", "https://drive.google.com/file/d/13B8I6pe3HiEnWzZOKY9qCKsxPJFjeq_A/view", "website_alg"],
+            ["site_map_alg", "Site Map Algorithm", "https://drive.google.com/file/d/13SYDMwy31sDeOYNSa0dCwN8rho17wsQa/view", "website_alg"],
+            ["best_teach_pract", "Best Teaching Practices Notion", "https://drive.google.com/file/d/1J4oPeuSUM6UDCVnNYCJbmJLSwDuVRsoF/view", "website_alg"],
+            ];
+
+      // Sorts projects in alphabetical order by title
+      projects.sort(function(a,b) {
+        return a[1].localeCompare(b[1]);
+      })
+
+      html = "";
+      for (var i = 0; i < projects.length; i++) {
+        if (i % 3 == 0) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left filterable ' + projects[i][3] +'">';
+        }
+        if (i % 3 == 1) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left filterable ' + projects[i][3] +'">';
+        }
+        if (i % 3 == 2) {
+          html += '<div style = "position: relative; padding-bottom: 5%;" class="thumbnail left filterable ' + projects[i][3] +'">';
+        }
+        html += '<div class="caption">';
+
+        html += '<img class="projectImage" src="/images/semester_proj/' + projects[i][0] + '.jpg" style="filter:sepia(0.4); -webkit-filter:sepia(0.4);-moz-filter:sepia(0.4);-ms-filter:sepia(0.4)">';
+        html += '<h3>' + projects[i][1] + '</h3>';
+        //html += '<p>' + projects[i][2] + '</p>';
+        html += '</div>';
+        html += '<button style = "position: absolute; bottom: 0;" onclick = "window.open(' + "'" + projects[i][2] + "'," + "'_blank')" + "\"" + 'class="custom-button"><span style= "font-size: .8em; font-weight: normal;">Link</span></button></div>';
+      }
+
+
+      document.getElementById("project-container").innerHTML += html;
+
+
+function filterSelection(c) {
+
+  var selected, i;
+
+  selected = document.getElementsByClassName("filterable");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < selected.length; i++) {
+    RemoveClass(selected[i], "show");
+    if (selected[i].className.indexOf(c) > -1) AddClass(selected[i], "show");
+  }
+}
+  function AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+function RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+filterSelection("all")
+var btnContainer = document.getElementById("categoryButtonContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var clicked = document.getElementsByClassName("active");
+    clicked[0].className = clicked[0].className.replace("active", "");
+    this.className += " active";
+  });
+};
+document.getElementById("start").click();
+
+</script>
+  </div>
+</div>
+
+</div>
